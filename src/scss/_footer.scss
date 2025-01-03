@@ -1,0 +1,111 @@
+@use "vars";
+@use "breakpoints";
+
+.footer {
+  padding: 125px 0;
+  background-color: #150433;
+  @include breakpoints.adaptive(tablet) {
+    padding: 60px 0;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .logo {
+    margin-right: 125px;
+    @include breakpoints.adaptive(mobile) {
+      margin-bottom: 20px;
+    }
+    a {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 178.2%;
+      letter-spacing: 2px;
+      color: vars.$white;
+      margin-bottom: 15px;
+    }
+    .descrption {
+      max-width: 150px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 163%;
+      color: vars.$white;
+    }
+  }
+  .nav {
+    &__title {
+      color: vars.$white;
+      font-size: 12.6px;
+      font-weight: 800;
+      line-height: 207%;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 5px;
+      width: fit-content;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 1px;
+        width: 95%;
+        background-color: vars.$red;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      gap: 10px;
+
+      a {
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 222%;
+        letter-spacing: 1px;
+        color: vars.$white;
+      }
+      &.contact {
+        .nav__list__item {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-weight: 400;
+          }
+        }
+      }
+      &.folow {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+      }
+    }
+    &:nth-child(2) {
+      margin-right: 40px;
+      @include breakpoints.adaptive(tablet) {
+        margin-right: 60px;
+      }
+    }
+    &:nth-child(3) {
+      margin-right: 90px;
+    }
+    &:nth-child(4) {
+      margin-right: 150px;
+      @include breakpoints.adaptive(tablet) {
+        margin-right: 127px;
+      }
+    }
+  }
+  .copy-rite {
+    display: block;
+    margin: 60px auto 60px auto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 163.35%;
+    color: vars.$white;
+  }
+}

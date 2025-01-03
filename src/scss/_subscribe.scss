@@ -1,0 +1,83 @@
+@use "vars";
+@use "breakpoints";
+
+.subscribe {
+  padding: 125px 0 140px;
+  .title {
+    text-align: center;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 500;
+    color: vars.$purple-bark;
+    margin-bottom: 24px;
+  }
+  .description {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: vars.$purple-light;
+    margin-bottom: 45px;
+  }
+  .form {
+    height: 54px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 3px solid vars.$grey;
+    @include breakpoints.adaptive(mobile) {
+      flex-direction: column;
+      border-bottom: 3px solid vars.$grey;
+      height: auto;
+    }
+    .input {
+      background-color: transparent;
+      border: none;
+      height: 100%;
+      width: 375px;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 207%;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 0 10px;
+      color: #9b94a3;
+      @include breakpoints.adaptive(mobile) {
+        height: 50px;
+        border-bottom: 3px solid vars.$grey;
+      }
+      &::placeholder {
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 207%;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #9b94a3;
+      }
+    }
+    .button {
+      width: 225px;
+      display: flex;
+      border: none;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      @include breakpoints.adaptive(mobile) {
+        width: 100%;
+        height: 50px;
+      }
+      background: linear-gradient(
+        180deg,
+        rgba(242, 242, 242, 0.5) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      font-size: 12px;
+      color: vars.$red;
+      font-weight: 800;
+      line-height: 207.9%;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+@use "vars";
+@use "breakpoints";
+
+.about-us {
+  padding: 180px 0 135px;
+  @include breakpoints.adaptive(tablet) {
+    padding: 90px 0;
+  }
+  .container {
+    position: relative;
+    @include breakpoints.adaptive(tablet) {
+      display: flex;
+    }
+    .text-wrap {
+      @include breakpoints.adaptive(tablet) {
+        max-width: 50%;
+      }
+      @include breakpoints.adaptive(mobile) {
+        max-width: 100%;
+      }
+    }
+    .sub-title {
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 207%;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: vars.$red;
+    }
+    .title {
+      color: vars.$purple-bark;
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+    .paragraf {
+      max-width: 40%;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      color: vars.$purple-light;
+      line-height: 163%;
+      @include breakpoints.adaptive(tablet) {
+        max-width: 90%;
+      }
+      &.bold {
+        font-weight: 800;
+        margin-bottom: 35px;
+        color: vars.$purple-bark;
+      }
+    }
+    .more {
+      margin-top: 55px;
+    }
+    .img-block {
+      max-height: 740px;
+      position: absolute;
+      right: 115px;
+      bottom: 0;
+      transform: translate(0, 30%);
+      @include breakpoints.adaptive(tablet) {
+        position: relative;
+        transform: translate(0, 0%);
+        right: auto;
+        bottom: auto;
+      }
+      @include breakpoints.adaptive(mobile) {
+        display: none;
+      }
+      .img-wrap {
+        height: 100%;
+        width: 460px;
+        position: relative;
+        z-index: 2;
+        @include breakpoints.adaptive(tablet) {
+          width: 350px;
+        }
+
+        .rectangle-sm {
+          position: absolute;
+          right: -1px;
+          top: -1px;
+          background: #30124e;
+          height: 511px;
+          width: 130px;
+          @include breakpoints.adaptive(tablet) {
+            display: none;
+          }
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .rectangle {
+        position: absolute;
+        right: 0;
+        top: -30px;
+        transform: translateX(50%);
+        z-index: 1;
+        width: 441px;
+        height: 540px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background: #30124e;
+        @include breakpoints.adaptive(tablet) {
+          display: none;
+        }
+      }
+      .rectangle__text {
+        font-family: "Noticia Text", serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 22.5px;
+        font-weight: 400;
+        line-height: 177.417%;
+        color: vars.$white;
+        max-width: 255px;
+        z-index: 3;
+        position: absolute;
+        right: -190px;
+        top: 200px;
+        @include breakpoints.adaptive(tablet) {
+          display: none;
+        }
+        &::after {
+          content: "“";
+          opacity: 0.25;
+          font-size: 144px;
+          font-style: italic;
+          font-weight: 700;
+          line-height: 150.122%;
+          position: absolute;
+          left: 50%;
+          bottom: 0px;
+          transform: translate(-55%, -30px);
+        }
+        &::before {
+          content: "”";
+          opacity: 0.25;
+          font-size: 144px;
+          font-style: italic;
+          font-weight: 700;
+          line-height: 150.122%;
+          position: absolute;
+          left: 50%;
+          top: 0px;
+          transform: translate(-55%, 90px);
+        }
+      }
+    }
+  }
+}
